@@ -2,18 +2,20 @@ import { auth } from "../../Utilities/Firebase";
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
     const [user, loading] = useAuthState(auth)
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
+    const navigate = useNavigate()
 
     const googleProvider = new GoogleAuthProvider()
 
     const googleLogin = async () => {
         try {
             await signInWithPopup(auth, googleProvider)
+            navigate('/updateprofile')
         } catch (err) {
             console.log(err.message)
         }

@@ -14,9 +14,9 @@ const Login = () => {
     const googleLogin = async () => {
         try {
             await signInWithPopup(auth, googleProvider)
-        } catch(err) {
+        } catch (err) {
             console.log(err.message)
-        } 
+        }
     }
 
     const login = async () => {
@@ -26,13 +26,14 @@ const Login = () => {
             console.log(err.message)
         }
     }
+
     return (
         <div>
             <p>Email:</p>
-            <input onChange={(e) => {setLoginEmail(e.target.value)}}></input>
+            <input onChange={(e) => { setLoginEmail(e.target.value) }}></input>
             <p>Password:</p>
-            <input type='password' onChange={(e) => {setLoginPassword(e.target.value)}}></input>
-            <Link to={'/homepage'}><button onClick={login}>Log in</button></Link>
+            <input type='password' onChange={(e) => { setLoginPassword(e.target.value) }}></input>
+            <Link to={'/channels/homepage'}><button onClick={login}>Log in</button></Link>
             <Link to={'/signup'}><button>Register?</button></Link>
             <button onClick={googleLogin}>Google</button>
         </div>
