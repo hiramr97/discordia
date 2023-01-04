@@ -37,6 +37,7 @@ const UpdateProfile = () => {
                 console.log(err.message)
             })
             updateProfile(auth.currentUser, { photoURL: url })
+            navigate('/channels/homepage')
         }).catch((err) => {
             console.log(err.message)
         });

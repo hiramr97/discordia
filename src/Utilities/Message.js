@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const Sidebar = () => {
+const ChannelSidebar = () => {
     const [servers, setServers] = useState()
+    const { id } = useParams()
 
     const getServers = async () => {
         try {
-            await axios.get('http://localhost:8000/servers/').then((response) => {
+            await axios.get(`http://localhost:8000/servers/${id}/`).then((response) => {
                 setServers(response.data)
             })
         } catch (err) {
@@ -20,20 +21,21 @@ const Sidebar = () => {
     }, [])
 
     if (servers === undefined) return;
-    const serverMapping = servers.map((server, key) => {
-        return (
+    
+    const messageMapping = servers.channels.map((channel, key) => {
+        return(
             <div key={key}>
-                <Link to={`/channels/${server.id}`}><img src={server.server_image} /></Link>
-
+                <p>{channel.name}</p>
             </div>
         )
     })
 
     return (
         <div>
-            {serverMapping}
+            <p>{servers.name}</p>
+            {channelMapping}
         </div>
     )
 }
 
-export default Sidebar
+export default ChannelSidebar
