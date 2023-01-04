@@ -5,12 +5,18 @@ import { getFirestore } from 'firebase/firestore'
 
 
 const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_API_KEY,
-    authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
-    projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
-    storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
-    messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
-    appId: process.env.NEXT_PUBLIC_APP_ID
+    apiKey: "AIzaSyA2fCh1Bt9h6s0v0HZyzmZWjxRI3ykFYUU",
+
+    authDomain: "discordia-697b6.firebaseapp.com",
+
+    projectId: "discordia-697b6",
+
+    storageBucket: "discordia-697b6.appspot.com",
+
+    messagingSenderId: "177663121845",
+
+    appId: "1:177663121845:web:da4338d8dd6d3e62bb21fc"
+
 };
 
 const app = initializeApp(firebaseConfig);
