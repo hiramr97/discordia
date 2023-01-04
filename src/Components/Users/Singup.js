@@ -33,8 +33,8 @@ const Signup = () => {
             <input onChange={(e) => {setEmail(e.target.value)}}></input>
             <p>Password:</p>
             <input type='password' onChange={(e) => {setPassword(e.target.value)}}></input>
-            <Link to={'updateprofile'}><button onClick={signup}>Sign up</button></Link>
-            <Link to={'login'}><button>Log in</button></Link>
+            <Link to={'/updateprofile'}><button onClick={signup}>Sign up</button></Link>
+            <Link to={'/login'}><button>Log in</button></Link>
             <button onClick={googleLogin}>Google</button>
         </div>
     )
