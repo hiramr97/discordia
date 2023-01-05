@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import ChannelPage from './Components/Channels/ChannelPage';
 import Homepage from './Components/Channels/Homepage';
 import Login from './Components/Users/Login';

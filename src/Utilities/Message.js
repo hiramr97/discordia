@@ -1,41 +1,18 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { useState } from "react"
+import axios from "axios"
 
-const ChannelSidebar = () => {
-    const [servers, setServers] = useState()
-    const { id } = useParams()
 
-    const getServers = async () => {
-        try {
-            await axios.get(`http://localhost:8000/servers/${id}/`).then((response) => {
-                setServers(response.data)
-            })
-        } catch (err) {
-            console.log(err)
-        }
-    }
-
-    useEffect(() => {
-        getServers()
-    }, [])
-
-    if (servers === undefined) return;
-    
-    const messageMapping = servers.channels.map((channel, key) => {
-        return(
-            <div key={key}>
-                <p>{channel.name}</p>
-            </div>
-        )
-    })
-
-    return (
-        <div>
-            <p>{servers.name}</p>
-            {channelMapping}
-        </div>
-    )
+const Message = (props) => {
+    console.log(props.newchannel)
+    let newData = Object.values(props)
+    console.log(newData)
+    // const channel = props
+    // if (channel === undefined) return;
+    // const message = channel.messages.map((messages, key) => {
+    //     return (
+    //         <p></p>
+    //     )
+    // })
 }
 
-export default ChannelSidebar
+export default Message

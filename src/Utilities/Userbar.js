@@ -1,12 +1,10 @@
-import { auth } from "../../Utilities/Firebase"
+import { auth } from "./Firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { signOut } from "firebase/auth"
-import Sidebar from "../../Utilities/Sidebar"
 import { useNavigate } from "react-router-dom"
-import ChannelSidebar from "../../Utilities/ChannelsSidebar"
-import Userbar from "../../Utilities/Userbar"
 
-export default function Homepage() {
+
+const Userbar = () => {
     const [user, loading] = useAuthState(auth)
     const navigate = useNavigate()
     const logout = async () => {
@@ -18,11 +16,11 @@ export default function Homepage() {
     if (!user) navigate('/login')
     if (user)
         return (
-            <div>
-                <Userbar/>
-                <Sidebar/>
-                <ChannelSidebar/>
-                <button onClick={logout}>Signout</button>
+            <div className="top-0 w-screen flex justify-end h-12 mb-2 bg-zinc-800 ">
+                <p className="mt-3 text-white">{user.displayName}</p>
+                <img className="rounded-md mt-1 mb-1 mx-1" src={user.photoURL}></img>
             </div>
         )
 }
+
+export default Userbar
