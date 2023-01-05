@@ -47,8 +47,8 @@ const ChannelSidebar = () => {
     console.log(newChannel)
     const channelMapping = servers.channels.map((channel, key) => {
         return (
-            <div className="hover:bg-violet-900" key={key}>
-                <button className="text-zinc-400 hover:text-white text-lg ml-5 mb-2" id={channel.id} onClick={getMessages}>{channel.name}</button>
+            <div className="hover:bg-violet-900 text-center" key={key}>
+                <button className="text-zinc-400 hover:text-white text-lg mb-3" id={channel.id} onClick={getMessages}>{channel.name}</button>
             </div>
         )
     })
