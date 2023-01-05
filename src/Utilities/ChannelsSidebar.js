@@ -4,9 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Message from "./Message";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./Firebase";
-import { signOut } from "firebase/auth";
 import ChannelModal from "./ChannelModal";
-import { unstable_renderSubtreeIntoContainer } from "react-dom";
 
 const ChannelSidebar = () => {
     const [servers, setServers] = useState()
@@ -54,12 +52,14 @@ const ChannelSidebar = () => {
     })
 
     return (
-        <div className="h-screen w-1/6 flex flex-col bg-zinc-800 top-0 ml-16 shadow-lg shadow-zinc-800">
-            <p className="mb-5 text-2xl text-center text-white">{servers.name}</p>
-            <button onClick={modalClick} className="text-zinc-400 hover:text-white text-lg mb-5">Add Channel</button>
-            {channelMapping}
+        <div className="max-h-screen">
+            <div className="h-screen w-64 flex flex-col bg-zinc-800 top-0 ml-16 shadow-lg shadow-zinc-800">
+                <p className="mb-5 text-2xl text-center text-white mt-4">{servers.name}</p>
+                <button onClick={modalClick} className="text-zinc-400 hover:text-white text-lg mb-5">Add Channel</button>
+                {channelMapping}
+                {modal && <ChannelModal setModal={setModal} />}
             <Message newChannel={newChannel} />
-            {modal && <ChannelModal setModal={setModal} />}
+            </div>
         </div>
     )
 

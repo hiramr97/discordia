@@ -4,11 +4,10 @@ import Homepage from './Components/Channels/Homepage';
 import Login from './Components/Users/Login';
 import Signup from './Components/Users/Singup';
 import UpdateProfile from './Components/Users/UpdateProfile';
-import Sidebar from './Utilities/Sidebar';
 
 function App() {
   return (
-    <div>
+    <div className='max-h-96'>
       <Routes>
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/login' element={<Login/>}/>

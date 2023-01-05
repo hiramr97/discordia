@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import ChannelSidebar from "../../Utilities/ChannelsSidebar"
 import Userbar from "../../Utilities/Userbar"
 
-export default function Homepage() {
+const Homepage = () => {
     const [user, loading] = useAuthState(auth)
     const navigate = useNavigate()
 
@@ -22,3 +22,5 @@ export default function Homepage() {
             </div>
         )
 }
+
+export default Homepage

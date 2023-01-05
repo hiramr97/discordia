@@ -12,7 +12,7 @@ const Userbar = () => {
     if (!user) navigate('/login')
     if (user)
         return (
-            <div>
+            <div className="-mb-14">
                 <div className="top-0 w-screen flex h-14 justify-end bg-zinc-800 shadow-md shadow-zinc-900">
                     <p className="mt-4 text-white text-lg mr-1">{user.displayName}</p>
                     <Link to={'/updateprofile'}><img className="rounded-lg mt-1 mb-1 mx-1 h-12" src={user.photoURL}></img></Link>
