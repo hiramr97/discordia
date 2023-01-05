@@ -38,6 +38,7 @@ const UpdateProfile = () => {
             })
             updateProfile(auth.currentUser, { photoURL: url })
             navigate('/channels/homepage')
+            window.location.reload()
         }).catch((err) => {
             console.log(err.message)
         });
