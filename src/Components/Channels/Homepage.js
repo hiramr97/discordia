@@ -15,7 +15,7 @@ export default function Homepage() {
     if (!user) navigate('/login')
     if (user)
         return (
-            <div className="bg-zinc-700 h-screen">
+            <div className="bg-zinc-700">
                 <Sidebar/>
                 <Userbar/>
                 <ChannelSidebar/>
