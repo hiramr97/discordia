@@ -9,7 +9,7 @@ const Userbar = () => {
 
 
     if (loading) return;
-    if (!user) navigate('/login')
+    if (!user) navigate('/')
     if (user)
         return (
             <div className="-mb-14">

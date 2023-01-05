@@ -33,8 +33,8 @@ const Message = ({ newMessages }) => {
     return (
         <div className="">
             {messageMapping}
-            <input className="absolute w-10/12 ml-64 bottom-0 h-12 rounded-lg bg-zinc-500 mg-12 outline-none pl-4" onChange={(e) => { setNewMessage(e.target.value) }}></input>
-            <button onClick={addMessage}>Send</button>
+            <button className="bg-violet-700 hover:bg-violet-800 transition-all rounded-md text-white text-center h-12 duration-200 ease-linear shadow-md shadow-black absolute bottom-0 mb-1 w-14 ml-48" onClick={addMessage}>Send</button>
+            <input className="absolute w-10/12 ml-64 bottom-0 h-12 rounded-lg bg-zinc-500 mg-12 outline-none pl-4 mb-1" onChange={(e) => { setNewMessage(e.target.value) }}></input>
         </div>
     )
 }

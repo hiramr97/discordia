@@ -9,8 +9,8 @@ function App() {
   return (
     <div className='max-h-96'>
       <Routes>
-        <Route path='/' element={<Signup />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/' element={<Login />} />
         <Route path='/updateprofile' element={<UpdateProfile />} />
         <Route path='/channels/homepage' element={<Homepage />} />
         <Route path='/channels/:id' element={<ChannelPage />} />

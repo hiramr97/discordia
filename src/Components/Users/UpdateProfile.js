@@ -45,7 +45,7 @@ const UpdateProfile = () => {
     }
 
     if (loading) return;
-    if (!user) navigate('/login')
+    if (!user) navigate('/')
     if (user)
         return (
             <div className="bg-zinc-700 h-screen w-screen flex justify-center">
