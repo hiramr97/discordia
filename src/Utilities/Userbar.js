@@ -1,15 +1,11 @@
 import { auth } from "./Firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
-import { signOut } from "firebase/auth"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 const Userbar = () => {
     const [user, loading] = useAuthState(auth)
     const navigate = useNavigate()
-    const logout = async () => {
-        await signOut(auth)
-    }
 
 
     if (loading) return;
@@ -18,7 +14,7 @@ const Userbar = () => {
         return (
             <div className="top-0 w-screen flex justify-end h-14 bg-zinc-800 ">
                 <p className="mt-4 text-white text-lg mr-1">{user.displayName}</p>
-                <img className="rounded-md mt-1 mb-1 mx-1" src={user.photoURL}></img>
+                <Link to={'/updateprofile'}><img className="rounded-lg mt-1 mb-1 mx-1 h-12" src={user.photoURL}></img></Link>
             </div>
         )
 }
