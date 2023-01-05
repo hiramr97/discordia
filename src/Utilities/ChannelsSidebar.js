@@ -6,6 +6,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./Firebase";
 import { signOut } from "firebase/auth";
 import ChannelModal from "./ChannelModal";
+import { unstable_renderSubtreeIntoContainer } from "react-dom";
 
 const ChannelSidebar = () => {
     const [servers, setServers] = useState()
@@ -27,10 +28,7 @@ const ChannelSidebar = () => {
     }
 
     const getMessages = async (e) => {
-        const channelId = e.target.id
-        await axios.get(`http://localhost:8000/channels/${channelId}/`).then((response) => {
-            setNewChannel(response.data)
-        })
+        setNewChannel(e.target.id)
     }
 
     useEffect(() => {
@@ -54,7 +52,6 @@ const ChannelSidebar = () => {
             </div>
         )
     })
-    
 
     return (
         <div className="h-screen w-1/6 flex flex-col bg-zinc-800 top-0 ml-16 shadow-lg shadow-zinc-800">

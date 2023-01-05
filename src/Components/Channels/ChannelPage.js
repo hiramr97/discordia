@@ -10,7 +10,6 @@ const ChannelPage = () => {
             <Sidebar />
             <Userbar/>
             <ChannelSidebar/>
-            <Message />
         </div>
     )
 }
