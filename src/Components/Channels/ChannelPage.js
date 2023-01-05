@@ -21,9 +21,6 @@ const ChannelPage = () => {
         getServers()
     }, [id])
 
-
-
-
     return (
         <div className="bg-zinc-700">
             <Sidebar />

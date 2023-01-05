@@ -16,7 +16,6 @@ const ChannelSidebar = ({ servers }) => {
     const getMessages = async (e) => {
         setNewChannel(e.target.id)
         await axios.get(`http://localhost:8000/channels/${e.target.id}/`).then((response) => {
-            console.log(response)
             setNewMessages(response.data.messages)
         })
     }
@@ -47,6 +46,7 @@ const ChannelSidebar = ({ servers }) => {
                 {channelMapping}
                 {modal && <ChannelModal setModal={setModal} />}
                 <Message newMessages={newMessages} />
+                
             </div>
         </div>
     )

@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useParams } from "react-router-dom"
 import axios from "axios"
 
-const ChannelModal = ({ setModal, setChoice }) => {
+const ChannelModal = ({ setModal }) => {
     const [name, setName] = useState()
     const [description, setDescription] = useState()
     const { id } = useParams()
