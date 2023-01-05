@@ -48,7 +48,7 @@ const Sidebar = () => {
         <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-zinc-800 shadow-xl shadow-zinc-900">
             {serverMapping}
             <button className="relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto bg-zinc-700 text-purple-700 hover:bg-purple-900 hover:text-white rounded-3x1 hover:rounded-xl transition-all duration-200 ease-linear text-xl rounded-3xl" onClick={serverModalClick}>+</button>
-            <button onClick={logout}><img className="relative flex items-center justify-center bottom-0 h-12 w-12 mt-2 mb-2 mx-auto bg-zinc-700 text-purple-700 hover:bg-purple-900 hover:text-white rounded-3x1 hover:rounded-xl transition-all duration-100 ease-linear text-xl rounded-3xl" src="https://imgur.com/iAy3vFa.png"/></button>
+            <button onClick={logout}><img className="relative flex items-center justify-center bottom-0 h-12 w-12 mt-2 mb-2 mx-auto bg-zinc-700 text-purple-700 hover:bg-purple-900 hover:text-white rounded-3x1 hover:rounded-xl transition-all duration-100 ease-linear text-xl rounded-3xl" src="https://imgur.com/iAy3vFa.png" /></button>
             {serverModal && <ServerModal setServerModal={setServerModal} />}
         </div>
     )

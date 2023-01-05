@@ -6,32 +6,20 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./Firebase";
 import ChannelModal from "./ChannelModal";
 
-const ChannelSidebar = () => {
-    const [servers, setServers] = useState()
-    const [newChannel, setNewChannel] = useState()
+const ChannelSidebar = ({ servers }) => {
+    const [newChannel, setNewChannel] = useState(1)
+    const [newMessages, setNewMessages] = useState()
     const [user, loading] = useAuthState(auth)
     const [modal, setModal] = useState(false)
 
 
-    const { id } = useParams()
-
-    const getServers = async () => {
-        try {
-            await axios.get(`http://localhost:8000/servers/${id}/`).then((response) => {
-                setServers(response.data)
-            })
-        } catch (err) {
-            console.log(err)
-        }
-    }
-
     const getMessages = async (e) => {
         setNewChannel(e.target.id)
+        await axios.get(`http://localhost:8000/channels/${e.target.id}/`).then((response) => {
+            console.log(response)
+            setNewMessages(response.data.messages)
+        })
     }
-
-    useEffect(() => {
-        getServers()
-    }, [])
 
     const modalClick = () => {
         setModal(true)
@@ -58,7 +46,7 @@ const ChannelSidebar = () => {
                 <button onClick={modalClick} className="text-zinc-400 hover:text-white text-lg mb-5">Add Channel</button>
                 {channelMapping}
                 {modal && <ChannelModal setModal={setModal} />}
-            <Message newChannel={newChannel} />
+                <Message newMessages={newMessages} />
             </div>
         </div>
     )

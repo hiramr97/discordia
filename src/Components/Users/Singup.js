@@ -28,7 +28,7 @@ const Signup = () => {
             console.log(err.message)
         }
     }
-    console.log(user)
+
     return (
         <div className="bg-zinc-700 h-screen w-screen flex justify-center">
             <div className="w-1/3 h-2/3 bg-zinc-800 rounded-lg flex flex-col justify-center my-auto shadow-lg shadow-black">

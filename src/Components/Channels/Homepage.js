@@ -16,9 +16,9 @@ const Homepage = () => {
     if (user)
         return (
             <div className="bg-zinc-700">
-                <Sidebar/>
-                <Userbar/>
-                <ChannelSidebar/>
+                <Sidebar />
+                <Userbar />
+                <ChannelSidebar />
             </div>
         )
 }
