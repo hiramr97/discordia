@@ -22,9 +22,9 @@ const Message = ({ newMessages }) => {
     if (newMessages === undefined) return;
     const messageMapping = newMessages.map((message, key) => {
         return (
-            <div className="ml-72 -mt-80" key={key}>
-                <p className="text-lg text-white w-scereen ">{message.user}</p>
-                <p className=" text-zinc-300 mb-80">{message.text}</p>
+            <div className="w-screen -ml-16 flex flex-col-reverse justify-center " key={key}>
+                <p className=" text-zinc-300 pl-96">{message.text}</p>
+                <p className="text-lg text-white pl-96 ">{message.user}</p>
             </div>
         )
     })

@@ -8,6 +8,7 @@ import axios from "axios"
 const ChannelPage = () => {
     const [servers, setServers] = useState()
     const { id } = useParams()
+
     const getServers = async () => {
         try {
             await axios.get(`https://discordia.herokuapp.com/servers/${id}/`).then((response) => {
@@ -17,6 +18,7 @@ const ChannelPage = () => {
             console.log(err)
         }
     }
+    
     useEffect(() => {
         getServers()
     }, [id])

@@ -1,28 +1,25 @@
 import { useState } from "react"
-import { useParams } from "react-router-dom"
-import axios from "axios"
 
 const ServerModal = ({ setServerModal }) => {
     const [name, setName] = useState()
     const [description, setDescription] = useState()
     const [image, setImage] = useState()
-    const { id } = useParams()
 
     const cancelServer = () => {
         setServerModal(false)
     }
 
     const addServer = (e) => {
+        e.preventDefault()
         let formData = new FormData()
         formData.append('server_image', image)
+        formData.append('name', name)
+        formData.append('description', description)
+        console.log(formData)
         fetch('https://discordia.herokuapp.com/servers/', {
             method: 'POST',
-            name: name,
-            description,
-            server_image: formData
+            formData,
         })
-        setServerModal(false)
-        window.location.reload()
     }
 
 

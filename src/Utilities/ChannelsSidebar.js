@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
 import Message from "./Message";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./Firebase";
@@ -33,7 +32,7 @@ const ChannelSidebar = ({ servers }) => {
         return (
             <div className="hover:bg-violet-900 flex" key={key}>
                 <button className="text-zinc-400 hover:text-white text-center text-lg mb-3 ml-5" id={channel.id} onClick={getMessages}>{channel.name}</button>
-                <button><img className="h-4 invisible hover:visible" src="https://imgur.com/qS2Y0JO.png" /></button>
+                <button><img className="h-4 invisible hover:visible" src="https://imgur.com/qS2Y0JO.png"/></button>
             </div>
         )
     })
