@@ -36,7 +36,7 @@ const Login = () => {
                 <p className="text-white pl-20 mb-3">Email:</p>
                 <input className="h-12 w-2/3 rounded-md bg-zinc-400 mx-auto pl-2 outline-none mb-5" onChange={(e) => { setLoginEmail(e.target.value) }}></input>
                 <p className="text-white pl-20 mb-3">Password:</p>
-                <input className="h-12 w-2/3 rounded-md bg-zinc-400 mx-auto text-white pl-2 mb-5" type='password' onChange={(e) => { setLoginPassword(e.target.value) }}></input>
+                <input className="h-12 w-2/3 rounded-md bg-zinc-400 mx-auto text-white pl-2 mb-5 outline-none" type='password' onChange={(e) => { setLoginPassword(e.target.value) }}></input>
                 <Link className="mx-auto mt-3 bg-violet-700 hover:bg-violet-800 transition-all  rounded-md text-white w-1/3 text-center h-10 duration-200 ease-linear pt-1.5 shadow-md shadow-black mb-5" to={'/channels/homepage'}><button onClick={login}>Log in</button></Link>
                 <button onClick={googleLogin} className="mx-auto mt-3 bg-blue-700 hover:bg-blue-800 transition-all rounded-md text-white w-52 text-center h-10 duration-200 ease-linear shadow-md shadow-black flex pt-2 justify-evenly "> <img className="h-5" src="https://imgur.com/PD4DF7S.png" /> Sign in with Google</button>
                 <p className="text-center text-white mt-8">Need an account? <Link className="text-blue-600 hover:underline" to={'/signup'}>  Register</Link></p>

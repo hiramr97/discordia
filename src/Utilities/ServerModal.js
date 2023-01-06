@@ -15,7 +15,6 @@ const ServerModal = ({ setServerModal }) => {
         formData.append('server_image', image)
         formData.append('name', name)
         formData.append('description', description)
-        console.log(formData)
         fetch('https://discordia.herokuapp.com/servers/', {
             method: 'POST',
             formData,
