@@ -12,20 +12,17 @@ const ServerModal = ({ setServerModal }) => {
         setServerModal(false)
     }
 
-    const addServer = async (e) => {
+    const addServer = (e) => {
         let formData = new FormData()
         formData.append('server_image', image)
-        try {
-            await axios.post('http://localhost:8000/servers/', {
-                name: name,
-                description,
-                server_image: formData
-            })
-            setServerModal(false)
-            window.location.reload()
-        } catch (err) {
-            console.log(err.message)
-        }
+        fetch('https://discordia.herokuapp.com/servers/', {
+            method: 'POST',
+            name: name,
+            description,
+            server_image: formData
+        })
+        setServerModal(false)
+        window.location.reload()
     }
 
 
@@ -46,7 +43,6 @@ const ServerModal = ({ setServerModal }) => {
                 </div>
             </div>
         </div>
-
     );
 }
 

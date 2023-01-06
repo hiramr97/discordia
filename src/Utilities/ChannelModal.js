@@ -9,7 +9,7 @@ const ChannelModal = ({ setModal }) => {
 
     const addChannel = async () => {
         try {
-            await axios.post('http://localhost:8000/channels/', {
+            await axios.post('https://discordia.herokuapp.com/channels/', {
                 name: name,
                 description,
                 server: id

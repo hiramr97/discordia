@@ -15,7 +15,7 @@ const ChannelSidebar = ({ servers }) => {
 
     const getMessages = async (e) => {
         setNewChannel(e.target.id)
-        await axios.get(`http://localhost:8000/channels/${e.target.id}/`).then((response) => {
+        await axios.get(`https://discordia.herokuapp.com/channels/${e.target.id}/`).then((response) => {
             setNewMessages(response.data.messages)
         })
     }

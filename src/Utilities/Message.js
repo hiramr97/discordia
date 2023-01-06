@@ -1,5 +1,4 @@
 import axios from "axios"
-import { async } from "@firebase/util"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { useState } from "react"
 import { auth } from "./Firebase"
@@ -8,10 +7,9 @@ import { auth } from "./Firebase"
 const Message = ({ newMessages }) => {
     const [user, loading] = useAuthState(auth)
     const [newMessage, setNewMessage] = useState()
-    console.log(newMessages)
     const addMessage = async () => {
         try {
-            await axios.post('http://localhost:8000/messages/', {
+            await axios.post('https://discordia.herokuapp.com/messages/', {
                 user: user.displayName,
                 text: newMessage,
                 channel: newMessages[0].id

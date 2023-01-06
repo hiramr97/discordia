@@ -17,7 +17,7 @@ const Sidebar = () => {
 
     const getServers = async () => {
         try {
-            await axios.get('http://localhost:8000/servers/').then((response) => {
+            await axios.get('https://discordia.herokuapp.com/servers/').then((response) => {
                 setServers(response.data)
             })
         } catch (err) {
